@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 type Cat {
-  id: Float!
+  id: Int!
   name: String!
   weight: Int!
 }
