@@ -1,0 +1,14 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Cat {
+  id: Float!
+  name: String!
+  weight: Int!
+}
+
+type Query {
+  cat(id: Int!): Cat!
+  cats: [Cat!]!
+}
