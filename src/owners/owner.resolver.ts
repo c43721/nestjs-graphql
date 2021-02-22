@@ -23,14 +23,14 @@ export class OwnerResolver {
     return this.ownerService.getOwnerById(id);
   }
 
-  @Query((returns) => Owner, { name: 'owners' })
+  @Query((returns) => [Owner], { name: 'owners' })
   getAllOwners() {
-    return this.ownerService.getAllOwners;
+    return this.ownerService.getAllOwners();
   }
 
   @ResolveField()
-  cats(@Parent() cat: Cat) {
-    const { id } = cat;
-    return this.catService.getCatById(id);
+  cats(@Parent() owner: Owner) {
+    const { cats } = owner;
+    return this.catService.getAllCats().filter(c => cats.includes(c.id));
   }
 }

@@ -8,7 +8,15 @@ type Cat {
   weight: Int!
 }
 
+type Owner {
+  id: Int!
+  name: String!
+  cats: [Cat!]!
+}
+
 type Query {
   cat(id: Int!): Cat!
   cats: [Cat!]!
+  owner(id: Int!): Owner!
+  owners: [Owner!]!
 }
