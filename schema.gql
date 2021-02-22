@@ -6,6 +6,7 @@ type Cat {
   id: Int!
   name: String!
   weight: Int!
+  owner: [Owner!]!
 }
 
 type Owner {

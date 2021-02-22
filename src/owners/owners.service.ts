@@ -16,6 +16,10 @@ export class OwnersService {
     },
   ];
 
+  getOwnersByCatId(id: number): Owner[] {
+    return this.owners.filter(owner => owner.cats.includes(id));
+  }
+
   getOwnerById(id: number): Owner {
     return this.owners.filter((o) => o.id === id)[0];
   }
